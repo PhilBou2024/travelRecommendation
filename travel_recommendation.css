@@ -1,0 +1,51 @@
+body {
+    background-image: url("./travel_background.jpg");
+    background-size: 100% auto;    
+}
+
+nav {
+    background-color: #2e3b2f;
+    color: white;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    text-align: right;
+}
+nav ul li {
+    display: inline;
+    margin-right: 60px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav button {
+    padding: 7px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+#search {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+
+nav Input {
+    border: none;
+}
