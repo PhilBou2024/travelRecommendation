@@ -48,6 +48,7 @@ nav button {
 
 nav Input {
     border: none; 
+    outline: none; 
     border-width: 0; 
     box-shadow: none;
 }
