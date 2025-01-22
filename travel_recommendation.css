@@ -67,6 +67,15 @@ button {
     padding-block: 5%;
 }
 
+#aboutUs {
+    font-size: 15px;
+    color: rgb(20, 101, 230);
+    font-weight: bold;
+    margin: 0 auto;
+    width: 50%;
+    padding-block: 5%;
+}
+
 .iconbutton{
     width: 48px;
     height: 200px;
