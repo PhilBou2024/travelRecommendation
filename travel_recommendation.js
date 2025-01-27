@@ -40,16 +40,20 @@ function load_social_icons() {
 function clearSearch() {
     document.getElementById('searchInput').value = "";
 }
-const btnClear = document.getElementById("btnClear");
 
+window.addEventListener("load", function(){
+    const btnClear = document.getElementById("btnClear");
+    btnClear.addEventListener('click', clearSearch);   
+});
 
+/*
 const btnSearch = document.getElementById("btnSearch");
 
 function searchCondition() {
     const input = document.getElementById('searchInput').value.toLowerCase();
 /*    const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
-*/
+*//*
     fetch('./travel_recommendation_api.json')
         .then(response => response.json())
         .then(data => {
@@ -76,4 +80,4 @@ function searchCondition() {
         });
 }
 
-btnSearch.addEventListener('click', searchCondition);
+btnSearch.addEventListener('click', searchCondition);*/
