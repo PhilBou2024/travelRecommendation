@@ -1,10 +1,10 @@
 body {
     background-image: url("./Images/travel_background.jpg");
     background-size: 100% auto;
-    font-family:ui-sans-serif,system-ui,sans-serif
+    font-family:ui-sans-serif,system-ui,sans-serif;
 }
 
-nav {
+#navHeader {
     background-color: #2e3b2f;
     color: white;
     display: flex;
@@ -60,17 +60,10 @@ button {
 #intro {
     font-size: 20px;
     color: rgb(20, 101, 230);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
     font-weight: bold;
     text-align: center;
-    margin: 0 auto;
-    width: 50%;
-    padding-block: 5%;
-}
-
-#aboutUs {
-    font-size: 15px;
-    color: rgb(20, 101, 230);
-    font-weight: bold;
     margin: 0 auto;
     width: 50%;
     padding-block: 5%;
@@ -86,4 +79,62 @@ button {
     left: 3%;
     bottom: 10%;
     cursor: pointer;
+}
+
+#aboutUs {
+    font-size: 15px;
+    color: rgb(20, 101, 230);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 50%;
+    padding-block: 5%;
+}
+
+#ourTeam {
+    color: rgb(20, 101, 230);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#ourTeamNav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.job {
+    color: white;
+    background-color: rgb(20, 101, 230);
+    text-align: center;
+    border-radius: 5px;
+    width: 50%;
+}
+
+#contactForm {
+    color: rgb(20, 101, 230);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.contactInput {
+    outline-color: rgb(20, 101, 230);
+    border-color: rgb(20, 101, 230);
+    background-color: transparent;
+}
+
+.submitButton {
+    padding: 7px 15px;
+    background-color: rgb(20, 101, 230);
+    color: white;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
   }
+
