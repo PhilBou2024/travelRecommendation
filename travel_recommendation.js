@@ -41,25 +41,47 @@ function clearSearch() {
     document.getElementById('searchInput').value = "";
 }
 
+/* Header is added during load page. Thus, listener for search buttons should be added after
+page loading : */
 window.addEventListener("load", function(){
     const btnClear = document.getElementById("btnClear");
     btnClear.addEventListener('click', clearSearch);   
+    
+    const btnSearch = document.getElementById("btnSearch");
+    btnSearch.addEventListener('click', searchCondition);
 });
 
-/*
-const btnSearch = document.getElementById("btnSearch");
 
 function searchCondition() {
     const input = document.getElementById('searchInput').value.toLowerCase();
 /*    const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
-*//*
+*/
     fetch('./travel_recommendation_api.json')
         .then(response => response.json())
         .then(data => {
-            const condition = data.conditions.find(item => item.name.toLowerCase().include(input));
-
-            if (condition) {
+            console.log(data);
+            let result = null;
+            /* First : test if input is a known keyword : */
+            for (var k in data) {
+                if (k.toLocaleLowerCase().includes(input)) {
+                    result = data[k];
+                    break;
+                } else {
+                    tmp = data[k].find(item => item.name.toLowerCase().includes(input));
+                    if(tmp) {
+                        result = tmp;
+                        break;
+                    }
+                }
+            };
+            if (result) {
+                console.log(result);
+            };
+/*            const condition = data.countries.find(item => item.name.toLowerCase().includes(input));
+            console.log(condition);
+*/
+/*            if (condition) {
                 const symptoms = condition.symptoms.join(', ');
                 const prevention = condition.prevention.join(', ');
                 const treatment = condition.treatment;
@@ -73,11 +95,9 @@ function searchCondition() {
             } else {
                 resultDiv.innerHTML = 'Condition not found.';
             }
-        })
+*/        })
         .catch(error => {
             console.error('Error:', error);
             resultDiv.innerHTML = 'An error occurred while fetching data.';
         });
 }
-
-btnSearch.addEventListener('click', searchCondition);*/
