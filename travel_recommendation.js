@@ -61,22 +61,16 @@ function searchCondition() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            let result = null;
             /* First : test if input is a known keyword : */
             for (var k in data) {
                 if (k.toLocaleLowerCase().includes(input)) {
-                    result = data[k];
-                    break;
+                    console.log(data[k]);
                 } else {
                     tmp = data[k].find(item => item.name.toLowerCase().includes(input));
                     if(tmp) {
-                        result = tmp;
-                        break;
+                        console.log(tmp);
                     }
                 }
-            };
-            if (result) {
-                console.log(result);
             };
 /*            const condition = data.countries.find(item => item.name.toLowerCase().includes(input));
             console.log(condition);

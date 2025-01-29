@@ -50,24 +50,23 @@ button {
 }
 
 #title {
-    font-size: 50px;
+    font-size: 30px;
     color: rgb(20, 101, 230);
     font-weight: bold;
     text-align: center;
     margin: 0 auto;
-    width: 50%;
+    width: 40%;
     padding-top: 7%;
 }
 
 #intro {
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(20, 101, 230);
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 20px;
     font-weight: bold;
     text-align: center;
     margin: 0 auto;
-    width: 50%;
+    width: 40%;
     padding-block: 5%;
 }
 
@@ -78,7 +77,6 @@ button {
     align-items: center;
     justify-content: center;
     position: fixed;
-    left: 3%;
     bottom: 10%;
     cursor: pointer;
 }
