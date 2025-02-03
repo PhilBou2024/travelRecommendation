@@ -54,8 +54,8 @@ button {
     color: rgb(20, 101, 230);
     font-weight: bold;
     text-align: center;
-    margin: 0 auto;
-    width: 40%;
+    margin-left: 10%;
+    margin-right: 5%;
     padding-top: 7%;
 }
 
@@ -65,9 +65,9 @@ button {
     background-color: rgba(255, 255, 255, 0.6);
     font-weight: bold;
     text-align: center;
-    margin: 0 auto;
-    width: 40%;
-    padding-block: 5%;
+    margin-left: 10%;
+    margin-right: 5%;
+    padding-bottom: 1px;
 }
 
 .iconbutton{
@@ -138,3 +138,16 @@ button {
     cursor: pointer;
   }
 
+
+#siteDescription {
+    font-size: 15px;
+    width: 80%;
+    color: rgb(20, 101, 230);
+    background-color: rgba(255, 255, 255);
+    text-align: center;
+    border-radius: 8px;
+    padding-bottom: 1px;
+    margin-left: 10%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+}

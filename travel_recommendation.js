@@ -51,45 +51,53 @@ window.addEventListener("load", function(){
     btnSearch.addEventListener('click', searchCondition);
 });
 
+function displaySite(site, container) {
+    container.innerHTML += `
+        <div id="siteDescription">
+        <image src="${site["imageUrl"]}" width="100%"/>
+        <p><b>${site["name"]}</b><p>
+        ${site["description"]}
+        <p><button>Visit</button></p>
+        </div>
+    `
+
+}
 
 function searchCondition() {
     const input = document.getElementById('searchInput').value.toLowerCase();
-/*    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '';
-*/
+    const resultTh = document.getElementById('results');
+    resultTh.innerHTML = '';
+
     fetch('./travel_recommendation_api.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            /* First : test if input is a known keyword : */
             for (var k in data) {
                 if (k.toLocaleLowerCase().includes(input)) {
                     console.log(data[k]);
+                    for (var i in data[k]) {
+                        console.log(data[k][i]);
+                        if (data[k][i]["cities"]) {
+                            for(p in data[k][i]["cities"]) {
+                                    displaySite(data[k][i]["cities"][p], resultTh);
+                            }
+                        } else {
+                            displaySite(data[k][i], resultTh);
+                        }
+                    }
                 } else {
                     tmp = data[k].find(item => item.name.toLowerCase().includes(input));
                     if(tmp) {
-                        console.log(tmp);
+                        if (tmp["cities"]) {
+                            for(p in tmp["cities"]) {
+                                    displaySite(tmp["cities"][p], resultTh);
+                            }
+                        } else {
+                            displaySite(tmp, resultTh);
+                        }
                     }
                 }
             };
-/*            const condition = data.countries.find(item => item.name.toLowerCase().includes(input));
-            console.log(condition);
-*/
-/*            if (condition) {
-                const symptoms = condition.symptoms.join(', ');
-                const prevention = condition.prevention.join(', ');
-                const treatment = condition.treatment;
-
-                resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-                resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-
-                resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-                resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-                resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
-            } else {
-                resultDiv.innerHTML = 'Condition not found.';
-            }
-*/        })
+        })
         .catch(error => {
             console.error('Error:', error);
             resultDiv.innerHTML = 'An error occurred while fetching data.';
