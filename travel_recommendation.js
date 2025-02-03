@@ -64,7 +64,8 @@ function displaySite(site, container) {
 }
 
 function searchCondition() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    if (input == "country") input = "countries";
     const resultTh = document.getElementById('results');
     resultTh.innerHTML = '';
 
