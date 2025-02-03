@@ -75,7 +75,6 @@ function searchCondition() {
                 if (k.toLocaleLowerCase().includes(input)) {
                     console.log(data[k]);
                     for (var i in data[k]) {
-                        console.log(data[k][i]);
                         if (data[k][i]["cities"]) {
                             for(p in data[k][i]["cities"]) {
                                     displaySite(data[k][i]["cities"][p], resultTh);
@@ -93,6 +92,13 @@ function searchCondition() {
                             }
                         } else {
                             displaySite(tmp, resultTh);
+                        }
+                    } else {
+                        for (var i in data[k]) {
+                            if (data[k][i]["cities"]) {
+                                tmp = data[k][i]["cities"].find(item => item.name.toLowerCase().includes(input));
+                                if(tmp) displaySite(tmp, resultTh);
+                            }
                         }
                     }
                 }
